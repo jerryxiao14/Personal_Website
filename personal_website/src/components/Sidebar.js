@@ -1,15 +1,22 @@
 import React from 'react';
-import {Box, Typography,List, ListItem, ListItemIcon} from '@mui/material';
-
+import {Box, Typography,List, ListItem, ListItemIcon, ListItemButton} from '@mui/material';
+import {
+  Home as HomeIcon,
+  Work as WorkIcon,
+  EmojiEvents as EmojiEventsIcon,
+  Code as CodeIcon,
+  Mail as MailIcon
+} from "@mui/icons-material";
+import { Link } from 'react-router-dom'; 
 
 export default function Sidebar() {
     
     const menuItems = [
-        {text:'About Me', icon: <ListItemIcon/>, path: "/about"},
-        {text: 'Skills & Experience', icon: <ListItemIcon/>, path: ""},
-        {text: 'Achievements', icon: <ListItemIcon/>, path: "" },
-        {text: 'Projects', icon: <ListItemIcon/>, path: ""}
-        , 'Contact'
+        {text:'About Me', icon: <HomeIcon/>, path: "/about"},
+        {text: 'Skills & Experience', icon: <WorkIcon/>, path: ""},
+        {text: 'Achievements', icon: <EmojiEventsIcon/>, path: "" },
+        {text: 'Projects', icon: <CodeIcon/>, path: ""}, 
+        {text: 'Contact', icon: <MailIcon/>, path: "/contact"}
     ]
     
     
@@ -26,13 +33,17 @@ export default function Sidebar() {
         >
             <Typography variant = "h6" sx = {{mb: 2}}> Jerry Xiao </Typography>
             <List>
-                {
-                    menuItems.map((item, index) => (
-                        <ListItem button key={index} sx={{mb: 1}}>
-                            <Typography variant="body1">{item.text}</Typography>
-                        </ListItem>
-                    ))
-                }
+                {menuItems.map((item, index) => (
+                    <ListItemButton
+                        key={index}
+                        component={Link}
+                        to={item.path}
+                        sx={{ mb: 1 }}
+                    >
+                        <ListItemIcon>{item.icon}</ListItemIcon>
+                        <Typography variant="body1">{item.text}</Typography>
+                    </ListItemButton>
+                ))}
             </List>
         </Box>
     )
