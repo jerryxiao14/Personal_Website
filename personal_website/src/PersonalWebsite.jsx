@@ -16,7 +16,7 @@ export default function PersonalWebsite() {
         <Header />
 
         {/* Main content area: Sidebar + Page */}
-        <Box sx={{ display: 'flex', flex: 1 }}>
+        <Box sx={{ display: 'flex', flex: 1, backgroundColor: 'black' }}>
           {/* Sidebar on the left */}
           {/*<Sidebar />*/}
 
