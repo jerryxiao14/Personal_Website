@@ -557,7 +557,6 @@ export default function Home(){
                     borderRadius:2,
                 }}
             />
-
         </Box>
     )
 }

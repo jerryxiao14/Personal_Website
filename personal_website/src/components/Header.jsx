@@ -18,7 +18,7 @@ export default function Header() {
         {text: 'Projects', icon: <CodeIcon/>, path: ""}, 
         {text: 'Contact', icon: <MailIcon/>, path: "/contact"}
     ]
-
+    
     const leftMenuItems = [
         {text: 'HOME', path: '/'},
         {text:'ABOUT', path: '/about'},
