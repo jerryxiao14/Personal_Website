@@ -1,6 +1,6 @@
 import React from "react";
 
-import {Box, Typography, Container} from '@mui/material'
+import {Box, Typography, Container,Button} from '@mui/material'
 import {ReactTyped} from 'react-typed'
 import JerryX from "../AboutMe/images/jerryx.jpg"
 
@@ -9,6 +9,9 @@ import icpc24 from './photo_gallery/icpc24.jpg'
 import jpmorgan_quant from './photo_gallery/jpmorgan_quant_research.png'
 import zaipu from './photo_gallery/zaipu_main.png'
 
+import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
+import NorthEastIcon from "@mui/icons-material/NorthEast";
+import { Link as RouterLink } from "react-router-dom";
 
 export default function Home(){
     
@@ -183,9 +186,154 @@ export default function Home(){
                             </Box>
                         </Box>
                 ))}
-
             </Box>
-            
+
+            {/*Brief about me section which also will link to more detailed about me page*/}
+            <Box
+                sx = {{
+                    display: 'flex',
+                    mt: 10,
+                    justifyContent: 'space-between',
+                }}
+            >
+                <Box
+                    sx = {{
+                        flex:1
+                    }}
+                >
+                <Typography
+                    sx={{
+                        fontSize: "30px",
+                        textTransform: "uppercase",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 1,
+                    }}
+                >
+                    <FiberManualRecordIcon sx={{ fontSize: "18px" }} />
+                    About Me
+                </Typography>
+
+
+                </Box>
+                
+                {/* full box for about me section */}
+                <Box
+                    sx = {{
+                        flex:1,
+                        display: 'flex-column',
+                    }}
+                >
+                    <Typography
+                        sx = {{
+                            fontSize: "32px",
+                            letterSpacing: 1.5,
+                        }}
+                    >
+                        I create intelligent, user-focused applications that combine data, algorithms, and design to turn complex problems into seamless digital experiences.
+                    </Typography>
+                    
+
+                    {/* Content for about me section */}
+                    <Box
+                        sx = {{
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            mt: 10,
+                            mb:10,
+                        }}
+                    >
+                        {/* # of projects done */}
+                        <Box
+                            sx = {{
+                                display: 'flex-column',
+                            }}>
+                            <Typography
+                                variant = 'h1'
+                            >
+                                0+
+                            </Typography>
+
+                            <Box
+                                sx = {{
+                                    backgroundColor: 'white',
+                                    height:'2px',
+                                    width: 300,
+                                    borderRadius:2,
+                                    mt:1.5,
+                                    mb:1.5,
+                                }}
+                            >
+                            </Box>
+
+                            <Typography
+                                sx = {{
+                                    fontSize: '20px',
+                                }}>
+                                Completed Projects
+                            </Typography>
+                        </Box>
+
+                        <Box
+                            sx = {{
+                                display: 'flex-column'
+                            }}
+                        >
+                            <Typography
+                                variant = 'h1'
+                            >
+                                0+
+                            </Typography>
+
+                            <Box
+                                sx = {{
+                                    backgroundColor: 'white',
+                                    height:'2px',
+                                    width: 300,
+                                    mt:1.5,
+                                    mb:1.5,
+                                    borderRadius:2,
+                                }}
+                            >
+                            </Box>
+
+                            <Typography
+                                sx = {{
+                                    fontSize: '20px'
+                                }}>
+                                Years of Experience
+                            </Typography>
+                        </Box>
+                    <Box/>
+                    </Box>
+
+                    <Button
+                        component={RouterLink}
+                        to="/about"
+                        endIcon={<NorthEastIcon/>}
+                        sx={{
+                            backgroundColor: "black",
+                            color: "white",
+                            borderRadius: 10,          
+                            px: 3, py: 1,             
+                            mt: 4,                   
+                            fontSize: "16px",
+                            border: "0.5px solid white",
+                            width: 250,
+                            height: 75,
+                            "&:hover": {
+                            backgroundColor: "#222",
+                            },
+                        }}
+                        >
+                        More About Me
+                    </Button>
+
+                </Box>
+                
+            </Box>
+
+
         </Box>
     )
 }
