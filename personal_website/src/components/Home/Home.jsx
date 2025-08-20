@@ -15,7 +15,7 @@ import { Link as RouterLink } from "react-router-dom";
 
 export default function Home(){
     
-    const heroText = "Hi, I'm Jerry Xiao:\nAspiring Software \nEngineer, Student,\n and Problem Solver!";
+    const heroText = "Hi, I'm Jerry Xiao:\nSoftware Engineer,\n Student,\n and Problem Solver!";
     
     const images = [
         {src: FakeSO, text: "Fake Stack Overflow"},
@@ -23,6 +23,13 @@ export default function Home(){
         {src: icpc24, text: "ICPC Greater NY Regional 2024"},
         {src: jpmorgan_quant, text: "Forage - J.P. Morgan Quant Research Simulation"}
         
+    ]
+
+    const expertise = [
+        {title: "Fullstack Development", attributes: ["Web Applications", "REST APIs", "Secure Authentication", "Cloud Services", "Database Management", "Data Visualization"]},
+        {title: "Competitive Programming", attributes: ["Problem Solving", "Algorithm Design", "Data Structures", "Time Complexity Analysis","Dynamic Programming", "Algorithmic Optimization"]},
+        {title: "AI & Data Science", attributes: ["LLM Integration", "Prompt Engineering", "Data Analytics", "Computational Finance", "Machine Learning Models", "Visualization Tools"]},
+        {title: "Software Engineering", attributes: ["Version Control", "Agile Methodologies", "Testing & Debugging", "CI/CD Pipelines", "Code Reviews", "API Optimization"]},
     ]
     
     return (
@@ -117,7 +124,7 @@ export default function Home(){
                         
                     }}
                 >
-                    {"SWE Intern passionate for Full-Stack Development,\n Competitive Programming, and AI Projects"}
+                    {"Software Engineer passionate for Full-Stack Development,\n Competitive Programming, and AI Projects"}
                 </Typography>
 
             </Box>
@@ -208,6 +215,7 @@ export default function Home(){
                         display: "flex",
                         alignItems: "center",
                         gap: 1,
+                        ml: 10,
                     }}
                 >
                     <FiberManualRecordIcon sx={{ fontSize: "18px" }} />
@@ -222,6 +230,7 @@ export default function Home(){
                     sx = {{
                         flex:1,
                         display: 'flex-column',
+                        mr: 10,
                     }}
                 >
                     <Typography
@@ -251,7 +260,7 @@ export default function Home(){
                             <Typography
                                 variant = 'h1'
                             >
-                                0+
+                                5+
                             </Typography>
 
                             <Box
@@ -282,7 +291,7 @@ export default function Home(){
                             <Typography
                                 variant = 'h1'
                             >
-                                0+
+                                1+
                             </Typography>
 
                             <Box
@@ -331,8 +340,223 @@ export default function Home(){
 
                 </Box>
                 
+                
             </Box>
 
+
+            <Box
+                sx = {{
+                    backgroundColor: 'white',
+                    height:'2px',
+                    width:'93%',
+                    mt: 10,
+                    mx: 'auto',
+                    borderRadius:2,
+                }}
+            />
+            
+            <Box
+                sx = {{
+                    display: 'flex-column',
+                    mt: 10,
+                    ml: 10,
+                }}
+            >
+                <Typography
+                    sx={{
+                        fontSize: "30px",
+                        textTransform: "uppercase",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 1,
+                        mb:2,
+                        
+                    }}
+                >
+                    <FiberManualRecordIcon sx={{ fontSize: "18px" }} />
+                    Expertise
+                </Typography>
+
+                <Typography
+                    variant = 'h1'
+                    sx = {{
+                        textTransform: 'uppercase',
+                    }}
+                >
+                    What I Do
+                </Typography>
+
+            </Box>
+            
+            {
+                // Expertise boxes
+                expertise.map((item,index) => {
+                    const mid = Math.ceil(item.attributes.length / 2);
+                    const col1 = item.attributes.slice(0,mid);
+                    const col2 = item.attributes.slice(mid);
+
+                    return (
+                        <Box>
+                            <Box
+                                sx = {{
+                                    backgroundColor: 'gray',
+                                    height:'2px',
+                                    width:'93%',
+                                    mx: 'auto',
+                                    mt: 10,
+                                    borderRadius:2,
+                                }}
+                            />
+                            <Box
+                                sx = {{
+                                    display: 'flex',
+                                    justifyContent: 'space-between',
+                                    ml: 10,
+                                    mt: 15,
+                                    mb: 5,
+                                }}
+                            >
+                                
+                                <Box
+                                    sx = {{
+                                        //border:1,
+                                        //borderColor: 'red'
+                                    }}
+                                >
+                                    <Typography
+                                        variant = 'h2'
+                                        sx = {{
+                                            textTransform: 'uppercase',
+                                        }}
+                                    >
+                                        {item.title}
+                                    </Typography>
+                                </Box>
+                                <Box
+                                    sx = {{
+                                        color: 'gray',
+                                        display: 'flex',
+                                        width: '475px',
+                                        mr: 15,
+                                        justifyContent: 'space-between',
+                                    }}
+                                >
+                                    <Box
+                                        sx = {{
+                                            display: 'flex-column',
+                                        }}
+                                    >
+                                        {col1.map((attr,index) => (
+                                            <Typography
+                                                sx = {{
+                                                    fontSize: "20px",
+                                                }}
+                                            >
+                                                {attr}
+                                            </Typography>
+                                        ))}
+                                    </Box>
+
+                                    <Box
+                                        sx = {{
+                                            display: 'flex-column',
+                                        }}
+                                    >
+                                        
+                                        {col2.map((attr,index) => (
+                                            <Typography
+                                                sx = {{
+                                                    fontSize: "20px",
+                                                }}
+                                            >
+                                                {attr}
+                                            </Typography>
+                                        ))}
+                                    </Box>
+                                </Box>
+
+                            </Box>
+                        </Box>
+
+                    )
+                })
+            }
+            
+            <Box
+                sx = {{
+                    backgroundColor: 'white',
+                    height:'2px',
+                    width:'93%',
+                    mx: 'auto',
+                    mt: 20,
+                    mb: 10,
+                    borderRadius:2,
+                }}
+            />
+
+            <Box
+                sx = {{
+                    justifyContent: 'center',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    width: '100%',
+                }}
+            >
+                <Typography
+                    sx = {{
+                        textTransform: 'uppercase',
+                        fontSize: '25px',
+                        mb: 5,
+                        mt: 5,
+                    }}
+                >
+                    Have a project in mind?
+                </Typography>
+
+                <Typography
+                    sx = {{
+                        textTransform: 'uppercase',
+                        fontSize: '125px',
+                        mb: 5,
+                    }}
+                >
+                    Let's Work Together!
+                </Typography>
+
+                <Button
+                    component={RouterLink}
+                    to="/about"
+                    sx={{
+                        backgroundColor: "black",
+                        color: "white",
+                        borderRadius: 10,          
+                        px: 3, py: 1,             
+                        mt: 4,                   
+                        fontSize: "16px",
+                        border: "0.5px solid white",
+                        width: 200,
+                        height: 90,
+                        "&:hover": {
+                        backgroundColor: "#222",
+                        },
+                    }}
+                    >
+                    Get In Touch
+                </Button>
+            </Box>
+
+            <Box
+                sx = {{
+                    backgroundColor: 'white',
+                    height:'2px',
+                    width:'93%',
+                    mx: 'auto',
+                    mt: 20,
+                    mb: 10,
+                    borderRadius:2,
+                }}
+            />
 
         </Box>
     )
