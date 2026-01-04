@@ -21,7 +21,7 @@ export default function Footer() {
   const socials = [
     {
       name: "Instagram",
-      icon: <InstagramIcon sx={{ fontSize: 32 }} />, // ⬆ bigger
+      icon: <InstagramIcon sx={{ fontSize: 32 }} />, 
       link: "https://instagram.com/jerry.xiao14",
     },
     {
@@ -44,7 +44,7 @@ export default function Footer() {
         alignItems: "center",
         backgroundColor: "black",
         color: "white",
-        height: 70, // ⬆ footer taller for balance
+        height: 70, 
         px: 3,
         fontFamily: "Inter, sans-serif",
       }}
@@ -54,7 +54,7 @@ export default function Footer() {
         variant="h6"
         sx={{
           fontWeight: 500,
-          fontSize: "28px", // ⬆ bigger
+          fontSize: "28px", 
           color: "white",
           ml: 10,
         }}

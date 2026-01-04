@@ -6,10 +6,16 @@ import JerryX from './images/jerryx.jpg'
 
 export default function AboutMe(){
     return (
-        <Box sx = {{borderColor:'red', border:1}}>
-            <Typography>Hi</Typography>
-            <Box sx = {{borderColor:'red', border:1}}>
-                <Avatar sx = {{width:100, height:100}} src = {JerryX}/>
+        <Box sx = {{display:'flex',  alignItems:'center',border:'2px solid blue'}}>
+            {/* Box of top about me section, contains left avatar and right text */}
+            {/* Left: Avatar */}
+            <Box 
+                sx=
+                {{ 
+                    border: '5px solid red', 
+                }}
+            >
+                <Avatar sx = {{width:200, height:200}} src = {JerryX}/>
             </Box>
         </Box>
     )

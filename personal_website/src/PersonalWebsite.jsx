@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header.jsx';
 import Home from './components/Home/Home.jsx';
+import Footer from './components/Footer.jsx';
 import AboutMe from './components/AboutMe/AboutMe'
+import Experience from './components/Experience/Experience.jsx';
 import { Box } from '@mui/material';
 
 
@@ -26,9 +28,12 @@ export default function PersonalWebsite() {
               <Route path="/" element={<Home/>} />
               <Route path="/about" element={<AboutMe />} />
               <Route path="/contact" element={<h1>Contact Us</h1>} />
+              <Route path="/experience" element={<Experience />}/>
             </Routes>
           </Box>
         </Box>
+
+        <Footer />
       </Box>
     </Router>
   );
