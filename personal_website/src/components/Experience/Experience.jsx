@@ -9,6 +9,8 @@ import { Card, CardContent, IconButton, Collapse } from "@mui/material";
 import { useState } from "react";
 import {ReactTyped} from 'react-typed'
 import { Link as RouterLink } from 'react-router-dom';
+import DownloadIcon from "@mui/icons-material/Download";
+
 
 const experience = [
     {
@@ -139,32 +141,35 @@ function HeaderSection({timelineRef}){
             sx = {{
                 alignItems: 'center',
                 justifyContent: 'center',
-                border: "2px solid red",
-                m:5
+                //border: "2px solid red",
+                m:23,
+
             }}
         >
             <Typography
-                variant="h2"
+                variant="h1"
                 sx={{
-                    textTransform: "uppercase",
+                    //textTransform: "uppercase",
                     color: "white",
                     whiteSpace: "pre-line",
                     textAlign: "center",
-                    width: "75%",
+                    width: "40%",
                     //border:"2px solid purple",
                     mx: "auto",
+                    fontWeight: 700,
                 }}
             >
                 {heroText}
             </Typography>
             <Typography
-                variant="body1"
+                variant="h5"
                 sx={{
                     color: "gray",
                     ml: 10,
-                    mt: 2,
+                    mt: 5,
                     whiteSpace: "pre-line",
                     textAlign: "center",
+                    width: "30%",
                     mx: "auto"
                 }}
             >
@@ -172,11 +177,12 @@ function HeaderSection({timelineRef}){
             </Typography>
             <Box 
                 sx = {{
-                    border:"2px solid green",
+                    //border:"2px solid green",
                     justifyContent: "center",
                     alignContent: "center",
                     display: "flex",
                     gap: 5,
+                    mt: 5
                 }}
             >
                 <Button
@@ -213,14 +219,20 @@ function HeaderSection({timelineRef}){
                 </Button>
 
                 <Button
+                    startIcon = {<DownloadIcon/>}
                     href = "Assets/Resume_Ruijie_Xiao_SWE.pdf"
                     download
                     sx = {{
+                        px: 2,
+                        py: 1,
                         color: "#2cb0d8ff",
                         border: "1px solid #2cb0d8ff",
                         borderRadius: 10,
                         backgroundColor: "transparent",
-
+                        '&:hover': {
+                            backgroundColor: "#e6f7ff",
+                            color: "#005b8dff",
+                        }
                     }}
                 >
                     Resume
@@ -236,6 +248,18 @@ export default function Experience() {
   return (
     <Box ref = {timelineRef}>
         <HeaderSection timelineRef = {timelineRef}/>
+        <Box
+          sx={{
+            width: "90%",
+            height: "2px",
+            backgroundColor: "white",
+            mx: "auto",
+            mt: 8,
+            mb: 10,
+            borderRadius: 2,
+            opacity: 0.8,
+          }}
+        />
         <Box 
         sx={{
             display: "flex",
