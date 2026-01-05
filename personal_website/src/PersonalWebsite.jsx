@@ -16,7 +16,7 @@ export default function PersonalWebsite() {
     <Router>
       <Box sx={{ display: 'flex', flexDirection: 'column', height: '100vh', width: '100%',backgroundColor:'black' }}>
         {/* Header at the top */}
-        <Header />
+        <Header/>
 
         {/* Main content area: Sidebar + Page */}
         <Box sx={{ display: 'flex', flex: 1, backgroundColor: 'black' }}>
@@ -24,7 +24,7 @@ export default function PersonalWebsite() {
           {/*<Sidebar />*/}
 
           {/* Page content on the right */}
-          <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+          <Box component="main" sx={{ flexGrow: 1, p: 3}}>
             <Routes>
               <Route path="/" element={<Home/>} />
               <Route path="/about" element={<AboutMe />} />

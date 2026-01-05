@@ -43,7 +43,10 @@ export default function Header() {
                 color: 'white',
                 height: 60,
                 px: 3, 
-                position: 'relative',
+                ml: 3,
+                position: 'fixed',
+                width: "95%",
+                zIndex: 10000000,
                 fontFamily: 'Inter, sans-serif'
             }}
         >

@@ -207,6 +207,7 @@ export default function Contact() {
         return (
             <Box
                 component = 'form'
+                onSubmit = {handleSubmit}
                 sx = {{
                     display: 'flex',
                     p:8,

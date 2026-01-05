@@ -47,6 +47,7 @@ export default function Footer() {
         height: 70, 
         px: 3,
         fontFamily: "Inter, sans-serif",
+        
       }}
     >
       {/* Left: name */}

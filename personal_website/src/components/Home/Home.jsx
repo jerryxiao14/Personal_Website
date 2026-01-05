@@ -187,6 +187,7 @@ export default function Home(){
                                     p:2, 
                                     textAlign: "center",
                                     transition: "bottom 0.5s ease",
+                                    zIndex:1,
                                 }}
                             >
                                 <Typography variant = "h6">{item.text}</Typography>
