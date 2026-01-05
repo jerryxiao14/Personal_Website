@@ -4,6 +4,7 @@ import SendIcon from '@mui/icons-material/Send';
 import EmailIcon from '@mui/icons-material/Email';
 import { LinkedIn } from '@mui/icons-material';
 import { Instagram } from '@mui/icons-material';
+import { Terminal } from '@mui/icons-material';
 import emailjs from "@emailjs/browser";
 
 
@@ -29,6 +30,12 @@ export default function Contact() {
             link: "@jerry.xiao14",
             href: "https://www.instagram.com/jerry.xiao14/",
             icon: <Instagram />,
+        },
+        {
+            name: "CodeForces",
+            link: "@JCrossover_14",
+            href: "https://codeforces.com/profile/JCrossover_14",
+            icon: <Terminal />,
         },
     ];
 
@@ -66,6 +73,7 @@ export default function Contact() {
                 <Box
                     sx = {{
                         mt: 5,
+                        
                     }}
                 >
                     {socials.map((social) => (
@@ -111,11 +119,15 @@ export default function Contact() {
                         display: 'flex',
                         gap: 2,
                         mb: 5,
-                        mt: 7
+                        mt: 7,
                     }}
                 >
                     {socials.map((social) => (
                         <Button
+                            component = 'a'
+                            href = {social.href}
+                            target = {social.name!== "Email" ? "_blank" : undefined}
+                            rel="noopener noreferrer"
                         >
                             {social.icon}
                         </Button>
