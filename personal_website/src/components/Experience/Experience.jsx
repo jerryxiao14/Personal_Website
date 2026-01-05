@@ -248,7 +248,7 @@ function HeaderSection({timelineRef}){
 
                 <Button
                     startIcon = {<DownloadIcon/>}
-                    href = "Assets/Resume_Ruijie_Xiao_SWE.pdf"
+                    href = "/Assets/Resume_Ruijie_Xiao_SWE.pdf"
                     download
                     sx = {{
                         px: 2,
