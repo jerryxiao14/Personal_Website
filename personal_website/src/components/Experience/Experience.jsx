@@ -13,29 +13,56 @@ import DownloadIcon from "@mui/icons-material/Download";
 
 
 const experience = [
-    {
-        title:"Software Engineer Intern",
-        org:"Broadridge Financial Solutions",
-        date:"May 2025 - Aug 2025",
-        details:[
-            "bullet point one",
-            "bullet point two",
-        ]
+  {
+    title: "To be announced",
+    org: "To be announced",
+    date: "Aug 2026 - ?",
+    summary: "To be announced.",
+    details: [],
+  },
+  {
+    title: "Software Engineering Intern",
+    org: "Broadridge Financial Solutions",
+    date: "Jun 2025 – Aug 2025",
+    summary:
+      "Built data-driven automation tooling to improve QA efficiency across enterprise portfolios.",
+    details: [
+      "Designed a recommendation system evaluating 60,000+ test cases across multiple portfolios, reducing manual automation assessment effort by 75% using a custom scoring algorithm.",
+      "Developed a React.js front-end with Google MUI to visualize automation recommendations across 10+ portfolios, supporting 200+ QA-led test planning sessions per quarter.",
+      "Built Python APIs to query PostgreSQL and prepare metadata for 60,000+ test cases, enabling automated LLM evaluation for 85% of test suites.",
+      "Implemented a Python-based API to interface with a Large Language Model (LLM), delivering structured automation recommendations and reducing QA decision variability by 40%.",
+    ],
+  },
+  {
+    title: "Data Structures & Algorithms Tutor",
+    org: "Stony Brook University",
+    date: "Jan 2025 – May 2025",
+    summary:
+      "Provided academic support for core CS coursework in algorithms and data structures.",
+    details: [
+      "Hosted 7+ weekly office hours, delivering personalized guidance on homework, exam preparation, and algorithmic problem-solving.",
+      "Managed student questions on Piazza for a class of 100+ students, ensuring timely clarification of complex data structures and algorithm concepts.",
+      "Mentored undergraduates through 10+ coding problem sets, reinforcing foundational CS principles and analytical thinking.",
+    ],
+  },
+];
 
-    },
-]
 
 const education = [
-    {
-        title:"B.Sc. Computer Science + Applied Mathematics",
-        org: "Stony Brook University",
-        date: "Aug 2022 - May 2026 (Expected)",
-        details: [
-            "bullet point one",
-            "bullet point two",
-        ]
-    }
-]
+  {
+    title: "B.S. Computer Science & Applied Mathematics",
+    org: "Stony Brook University",
+    date: "Aug 2022 – May 2026 (Expected)",
+    summary:
+      "Focus on software engineering, algorithms, and data-driven systems.",
+    details: [
+      "Relevant coursework: Software Development, Computer Networks, Computer Systems, Computational Finance, Artificial Intelligence, and Data Science.",
+      "Active participant in competitive programming and algorithmic problem solving.",
+      "Recipient of the University Scholars Scholarship.",
+    ],
+  },
+];
+
 
 const heroText = "I build software that brings clarity to complexity."
 const descText = "Full-stack engineer experienced in React, Python, and backend APIs, building data-driven tools that automate analysis and reduce manual decision-making."
@@ -114,6 +141,7 @@ function TimelineColumn({ title, items }) {
         sx={{
           color: "white",
           textTransform: "uppercase",
+          ml: 20,
           mb: 4,
         }}
       >
@@ -246,7 +274,7 @@ function HeaderSection({timelineRef}){
 export default function Experience() {
     const timelineRef = useRef(null);
   return (
-    <Box ref = {timelineRef}>
+    <Box>
         <HeaderSection timelineRef = {timelineRef}/>
         <Box
           sx={{
@@ -260,18 +288,19 @@ export default function Experience() {
             opacity: 0.8,
           }}
         />
+        <Box ref ={timelineRef}/>
         <Box 
-        sx={{
-            display: "flex",
-            gap: 10,
-            px: 10,
-            mt: 10,
-            backgroundColor: "black",
-            minHeight: "100vh",
-        }}
+          sx={{
+              display: "flex",
+              gap: 10,
+              px: 10,
+              mt: 15,
+              backgroundColor: "black",
+              minHeight: "100vh",
+          }}
         >
-        <TimelineColumn title="Work Experience" items={experience} />
-        <TimelineColumn title="Education" items={education} />
+          <TimelineColumn title="Work Experience" items={experience} />
+          <TimelineColumn title="Education" items={education} />
         </Box>
     </Box>
     
