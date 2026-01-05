@@ -6,6 +6,7 @@ import Home from './components/Home/Home.jsx';
 import Footer from './components/Footer.jsx';
 import AboutMe from './components/AboutMe/AboutMe'
 import Experience from './components/Experience/Experience.jsx';
+import Contact from './components/Contact/Contact.jsx';
 import { Box } from '@mui/material';
 
 
@@ -27,7 +28,7 @@ export default function PersonalWebsite() {
             <Routes>
               <Route path="/" element={<Home/>} />
               <Route path="/about" element={<AboutMe />} />
-              <Route path="/contact" element={<h1>Contact Us</h1>} />
+              <Route path="/contact" element={<Contact />} />
               <Route path="/experience" element={<Experience />}/>
             </Routes>
           </Box>
