@@ -527,7 +527,7 @@ export default function Home(){
 
                 <Button
                     component={RouterLink}
-                    to="/about"
+                    to="/contact"
                     sx={{
                         backgroundColor: "black",
                         color: "white",
