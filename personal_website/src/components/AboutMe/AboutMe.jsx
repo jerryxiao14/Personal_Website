@@ -1,10 +1,24 @@
 import React from 'react'
-import {Box, Typography, Avatar} from '@mui/material'
+import {Box, Typography, Avatar, Chip, Grid, Card, CardContent} from '@mui/material'
 
 import JerryX from './images/jerryx.jpg'
 import { LocationOn } from '@mui/icons-material'
 import { Email } from '@mui/icons-material'
 import { Phone } from '@mui/icons-material'
+
+import {
+  SiPython,
+  SiJavascript,
+  SiTypescript,
+  SiReact,
+  SiNodedotjs,
+  SiMongodb,
+  SiPostgresql,
+  SiCplusplus,
+  SiGo,
+  SiGit,
+} from 'react-icons/si'
+
 
 
 const descText = `I’m a Software Engineer and Computer Science student at Stony Brook University, 
@@ -144,6 +158,134 @@ function Description(){
   )
 }
 
+const skillSections = [
+  {
+    title: 'Frontend',
+    skills: ['React.js', 'JavaScript', 'TypeScript', 'HTML/CSS', 'Material UI'],
+  },
+  {
+    title: 'Backend',
+    skills: ['Node.js', 'Express.js', 'Python', 'Java', 'Go'],
+  },
+  {
+    title: 'Databases',
+    skills: ['MongoDB', 'Mongoose', 'SQL'],
+  },
+  {
+    title: 'Languages',
+    skills: ['Python', 'Java', 'Go', 'JavaScript', 'TypeScript', 'C++'],
+  },
+  {
+    title: 'Tools & Other',
+    skills: ['GitHub', 'Axios'],
+  },
+];
+
+const skillIconMap = {
+  Python: <SiPython />,
+  JavaScript: <SiJavascript />,
+  TypeScript: <SiTypescript />,
+  'React.js': <SiReact />,
+  'Node.js': <SiNodedotjs />,
+  MongoDB: <SiMongodb />,
+  SQL: <SiPostgresql />,
+  'C++': <SiCplusplus />,
+  Go: <SiGo />,
+  GitHub: <SiGit />,
+}
+
+
+function SkillChip({ label }) {
+  return (
+    <Chip
+      icon={skillIconMap[label]}
+      label={label}
+      sx={{
+        backgroundColor: '#1f1f1f',
+        height: 42,
+        px: 1.5,
+        color: 'white',
+        border: '1px solid #2a2a2a',
+        px: 1,
+        fontSize: '1rem',
+        transition: 'all 0.25s ease',
+        '&:hover': {
+          backgroundColor: '#2a2a2a',
+          transform: 'translateY(-2px)',
+          boxShadow: '0 6px 18px rgba(44,176,216,0.25)',
+        },
+        '& .MuiChip-icon': {
+          color: '#2cb0d8ff',
+        },
+      }}
+    />
+  )
+}
+
+function SkillCard({ title, skills }) {
+  return (
+    <Card
+      sx={{
+        backgroundColor: '#111',
+        border: '1px solid #2a2a2a',
+        borderRadius: 3,
+        height: '100%',
+      }}
+    >
+      <CardContent>
+        <Typography
+          variant="h6"
+          sx={{
+            color: 'white',
+            mb: 2,
+            letterSpacing: '0.08em',
+            textTransform: 'uppercase',
+          }}
+        >
+          {title}
+        </Typography>
+
+        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 5 }}>
+          {skills.map((skill) => (
+            <SkillChip key={skill} label={skill} />
+          ))}
+        </Box>
+      </CardContent>
+    </Card>
+  )
+}
+
+
+function Skills() {
+  return (
+    <Box sx={{ width: '70%', mt: 10 }}>
+      <Typography
+        variant="h3"
+        sx={{
+          color: 'white',
+          fontWeight: 300,
+          mb: 6,
+        }}
+      >
+        Technical Skills
+      </Typography>
+
+      <Grid container spacing={4}>
+        {skillSections.map((section) => (
+          <Grid item xs={12} md={6} key={section.title}>
+            <SkillCard
+              title={section.title}
+              skills={section.skills}
+            />
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
+  )
+}
+
+
+
 export default function AboutMe(){
     return (
         <Box 
@@ -160,6 +302,7 @@ export default function AboutMe(){
             <Divider mtopMargin={20}/>
             <Description />
             <Divider mtopMargin = {20}/>
+            <Skills/>
         </Box>
     )
 }
