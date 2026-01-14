@@ -271,6 +271,8 @@ function HeaderSection({timelineRef}){
     )
 }
 
+
+
 export default function Experience() {
     const timelineRef = useRef(null);
   return (
