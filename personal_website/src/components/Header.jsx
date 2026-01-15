@@ -7,9 +7,22 @@ import {
   Code as CodeIcon,
   Mail as MailIcon
 } from "@mui/icons-material";
-import { Link } from 'react-router-dom'; 
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+
 
 export default function Header() {
+
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const handleProjectsClick = () => {
+        if (location.pathname === '/about') {
+            const element = document.querySelector('#projects-section');
+            if (element) element.scrollIntoView({ behavior: 'smooth' });
+        } else {
+            navigate('/about#projects');
+        }
+    };
     
     const menuItems = [
         {text:'About', icon: <HomeIcon/>, path: "/about"},
@@ -27,7 +40,7 @@ export default function Header() {
     
     const rightMenuItems = [
         {text: 'ACHIEVEMENTS', path: '/achievements'},
-        {text: 'PROJECTS', path: '/projects'},
+        {text: 'PROJECTS', action: handleProjectsClick},
         {text: 'CONTACT', path: '/contact'}
     ]
     // lets do for the top nav_bar, Home, About, Experience,
@@ -98,10 +111,11 @@ export default function Header() {
             <Box sx = {{display: 'flex', gap:5,height: '100%'}}>
                 {rightMenuItems.map((item) => (
                     <Button
-                        key = {item.text}
-                        component = {Link}
-                        to = {item.path}
-                        sx = {{
+                        key={item.text}
+                        onClick={item.action ? item.action : undefined}
+                        component={item.path ? Link : 'button'}
+                        to={item.path ? item.path : undefined}
+                        sx={{
                             color: 'white',
                             fontWeight: 500,
                             fontSize: '16px',
@@ -109,12 +123,11 @@ export default function Header() {
                             height: '100%',
                             minWidth: 'auto',
                             px:2
-                            //border:1,
-                            //borderColor:'white'
                         }}
                     >
                         {item.text}
                     </Button>
+
                 ))
 
                 }
