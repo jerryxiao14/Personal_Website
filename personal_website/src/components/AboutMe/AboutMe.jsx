@@ -279,7 +279,7 @@ function Skills() {
         Technical Skills
       </Typography>
 
-      <Grid container spacing={4}>
+      <Grid container spacing={4} sx = {{mb:10}}>
         {skillSections.map((section) => (
           <Grid item xs={12} md={6} key={section.title}>
             <SkillCard
