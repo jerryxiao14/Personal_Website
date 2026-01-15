@@ -475,6 +475,65 @@ function ProjectOverview(){
     )
 }
 
+function GitHubCTA() {
+  return (
+    <Box
+      sx={{
+        width: "70%",
+        mx: "auto",
+        mt: 10,
+        mb: 10,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "flex-start", // left-align content
+      }}
+    >
+      <Typography
+        sx={{
+          textTransform: "uppercase",
+          fontSize: "22px",
+          color: "grey",
+          mb: 1,
+          letterSpacing: "0.08em",
+        }}
+      >
+        Want to see more of my work?
+      </Typography>
+
+      <Typography
+        sx={{
+          fontSize: "42px",
+          fontWeight: 300,
+          color: "white",
+          mb: 3,
+        }}
+      >
+        Explore My GitHub
+      </Typography>
+
+      <Button
+        href="https://github.com/jerryxiao14"
+        target="_blank"
+        startIcon={<GitHub />}
+        sx={{
+          color: "white",
+          border: "1px solid white",
+          borderRadius: 10,
+          px: 4,
+          py: 1.5,
+          fontSize: "16px",
+          "&:hover": {
+            backgroundColor: "#222",
+          },
+        }}
+      >
+        View GitHub
+      </Button>
+    </Box>
+  );
+}
+
+
 function AboutContact(){
     return (
         <Box>
@@ -553,6 +612,7 @@ export default function AboutMe(){
             <Skills/>
             <Divider mtopmargin = {10}/>
             <ProjectOverview/>
+            <GitHubCTA/>
             <Divider mtopMargin = {10}/>
             <AboutContact/>
             <Divider mtopMargin = {20}/>
