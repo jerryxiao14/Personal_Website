@@ -1,6 +1,6 @@
 import { fontFamily } from "@mui/system";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Button } from "@mui/material";
 import { Box, Typography } from "@mui/material";
 
@@ -9,12 +9,26 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
 export default function Footer() {
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleProjectsClick = () => {
+        if (location.pathname === '/about') {
+            const element = document.querySelector('#projects-section');
+            if (element) element.scrollIntoView({ behavior: 'smooth' });
+        } else {
+            navigate('/about#projects');
+        }
+    };
+
+
   const menuItems = [
     { text: "HOME", path: "/" },
     { text: "ABOUT", path: "/about" },
     { text: "EXPERIENCE", path: "/experience" },
     { text: "ACHIEVEMENTS", path: "/achievements" },
-    { text: "PROJECTS", path: "/projects" },
+    { text: "PROJECTS", action: handleProjectsClick },
     { text: "CONTACT", path: "/contact" },
   ];
 
@@ -68,8 +82,9 @@ export default function Footer() {
         {menuItems.map((item) => (
           <Button
             key={item.text}
-            component={Link}
-            to={item.path}
+            onClick={item.action ? item.action : undefined}
+            component={item.path ? Link : 'button'}
+            to={item.path ? item.path : undefined}
             sx={{
               color: "white",
               fontWeight: 500,

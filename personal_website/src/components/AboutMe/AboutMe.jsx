@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useRef, useEffect} from 'react'
+import { useLocation } from 'react-router-dom';
 import { Link as RouterLink } from "react-router-dom";
 import {Box, Typography, Avatar, Chip, Grid, Card, CardContent, CardMedia, CardActions, Button, Stack} from '@mui/material'
 
@@ -12,6 +13,7 @@ import FakeSO from '../Home/photo_gallery/fakeso.png'
 import icpc24 from '../Home/photo_gallery/icpc24.jpg'
 import jpmorgan_quant from '../Home/photo_gallery/jpmorgan_quant_research.png'
 import zaipu from '../Home/photo_gallery/zaipu_main.png'
+
 
 import {
   SiPython,
@@ -438,14 +440,17 @@ function ProjectCard({project}){
     )
 }
 
-function ProjectOverview(){
+function ProjectOverview({refProp}){
     return (
         <Box
+            ref={refProp}
+            id="projects-section"
             sx = {{
                 width: "70%",
                 mx: "auto",
                 mt: 10,
                 //border: '2px solid blue'
+                
             }}
         >
             <Typography
@@ -594,6 +599,17 @@ function AboutContact(){
     );
 }
 export default function AboutMe(){
+
+    const projectsRef = useRef(null);
+    const location = useLocation();
+
+    // Scroll to Projects if URL state or hash indicates
+    useEffect(() => {
+        if (location.hash === "#projects" && projectsRef.current) {
+            projectsRef.current.scrollIntoView({ behavior: "smooth" });
+        }
+    }, [location]);
+
     return (
         <Box 
             sx = 
@@ -611,7 +627,7 @@ export default function AboutMe(){
             <Divider mtopMargin = {20}/>
             <Skills/>
             <Divider mtopmargin = {10}/>
-            <ProjectOverview/>
+            <ProjectOverview refProp={projectsRef}/>
             <GitHubCTA/>
             <Divider mtopMargin = {10}/>
             <AboutContact/>
