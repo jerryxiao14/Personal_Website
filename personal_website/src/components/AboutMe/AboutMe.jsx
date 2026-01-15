@@ -313,7 +313,7 @@ const projects = [
         "Developed an interactive dashboard with Graph.js and Material-UI to visualize real-time financial data.",
         "Implemented secure authentication and optimized API performance to ensure scalability and data protection.",
         ],
-        github: "github.com/jerryxiao14/Zaipu",
+        github: "https://github.com/jerryxiao14/Zaipu",
     },
     {
         title: "Fake Stack Overflow",
