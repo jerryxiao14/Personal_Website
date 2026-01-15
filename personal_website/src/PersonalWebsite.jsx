@@ -8,6 +8,7 @@ import AboutMe from './components/AboutMe/AboutMe'
 import Experience from './components/Experience/Experience.jsx';
 import Contact from './components/Contact/Contact.jsx';
 import { Box } from '@mui/material';
+import Achievements from './components/Achievements/Achievements.jsx';
 
 
 
@@ -30,6 +31,7 @@ export default function PersonalWebsite() {
               <Route path="/about" element={<AboutMe />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/experience" element={<Experience />}/>
+              <Route path="/achievements" element = {<Achievements/>}/>
             </Routes>
           </Box>
         </Box>
