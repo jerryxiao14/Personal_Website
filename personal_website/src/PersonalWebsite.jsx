@@ -12,9 +12,27 @@ import Achievements from './components/Achievements/Achievements.jsx';
 
 
 
+import {useEffect} from 'react'
+import {useLocation} from 'react-router-dom'
+
+function ScrollToTop(){
+  const {pathname} = useLocation();
+
+  useEffect(()=>{
+    window.scrollTo({
+      top:0,
+      left:0,
+      behavior:"smooth"
+    })
+  },[pathname]);
+
+  return null;
+}
+
 export default function PersonalWebsite() {
   return (
     <Router>
+      <ScrollToTop/>
       <Box sx={{ display: 'flex', flexDirection: 'column', height: '100vh', width: '100%',backgroundColor:'black' }}>
         {/* Header at the top */}
         <Header/>
