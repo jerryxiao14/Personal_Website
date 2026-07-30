@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Sidebar from './components/Sidebar';
 import Header from './components/Header.jsx';
 import Home from './components/Home/Home.jsx';
 import Footer from './components/Footer.jsx';
@@ -10,10 +9,8 @@ import Contact from './components/Contact/Contact.jsx';
 import { Box } from '@mui/material';
 import Achievements from './components/Achievements/Achievements.jsx';
 
-
-
-import {useEffect} from 'react'
-import {useLocation} from 'react-router-dom'
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 function ScrollToTop(){
   const {pathname} = useLocation();

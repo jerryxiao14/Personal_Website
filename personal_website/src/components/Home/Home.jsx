@@ -1,6 +1,6 @@
 import React from "react";
 
-import {Box, Typography, Container,Button} from '@mui/material'
+import { Box, Typography, Button } from '@mui/material';
 import {ReactTyped} from 'react-typed'
 import JerryX from "../AboutMe/images/jerryx.jpg"
 

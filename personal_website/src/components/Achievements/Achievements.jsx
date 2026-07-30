@@ -1,17 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import {Box, Typography, Container,Button, Card, CardContent} from '@mui/material'
-import {ReactTyped} from 'react-typed'
-import JerryX from "../AboutMe/images/jerryx.jpg"
+import { Box, Typography, Card, CardContent } from '@mui/material';
+import JerryX from '../AboutMe/images/jerryx.jpg';
 
-import FakeSO from '../Home/photo_gallery/fakeso.png'
-import icpc24 from '../Home/photo_gallery/icpc24.jpg'
-import jpmorgan_quant from '../Home/photo_gallery/jpmorgan_quant_research.png'
-import zaipu from '../Home/photo_gallery/zaipu_main.png'
-
-import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
-import NorthEastIcon from "@mui/icons-material/NorthEast";
-import { Link as RouterLink } from "react-router-dom";
+import icpc24 from '../Home/photo_gallery/icpc24.jpg';
 
 
 const achievements = [

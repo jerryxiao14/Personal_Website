@@ -1,12 +1,5 @@
 import React from 'react';
-import {Box, Button, Typography,List, ListItem, ListItemIcon, ListItemButton} from '@mui/material';
-import {
-  Home as HomeIcon,
-  Work as WorkIcon,
-  EmojiEvents as EmojiEventsIcon,
-  Code as CodeIcon,
-  Mail as MailIcon
-} from "@mui/icons-material";
+import { Box, Button, Typography } from '@mui/material';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 
@@ -23,14 +16,6 @@ export default function Header() {
             navigate('/about#projects');
         }
     };
-    
-    const menuItems = [
-        {text:'About', icon: <HomeIcon/>, path: "/about"},
-        {text: 'Skills & Experience', icon: <WorkIcon/>, path: ""},
-        {text: 'Achievements', icon: <EmojiEventsIcon/>, path: "" },
-        {text: 'Projects', icon: <CodeIcon/>, path: ""}, 
-        {text: 'Contact', icon: <MailIcon/>, path: "/contact"}
-    ]
     
     const leftMenuItems = [
         {text: 'HOME', path: '/'},
@@ -84,9 +69,7 @@ export default function Header() {
                     >
                         {item.text}
                     </Button>
-                ))
-
-                }
+                ))}
 
             </Box>
 
@@ -128,9 +111,7 @@ export default function Header() {
                         {item.text}
                     </Button>
 
-                ))
-
-                }
+                ))}
 
             </Box>
         </Box>

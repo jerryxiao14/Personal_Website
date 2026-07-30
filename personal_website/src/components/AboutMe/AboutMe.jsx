@@ -1,18 +1,12 @@
-import React, {useRef, useEffect} from 'react'
-import { useLocation } from 'react-router-dom';
-import { Link as RouterLink } from "react-router-dom";
-import {Box, Typography, Avatar, Chip, Grid, Card, CardContent, CardMedia, CardActions, Button, Stack} from '@mui/material'
+import React, { useRef, useEffect } from 'react';
+import { useLocation, Link as RouterLink } from 'react-router-dom';
+import { Box, Typography, Chip, Grid, Card, CardContent, CardMedia, CardActions, Button, Stack } from '@mui/material';
 
-import JerryX from './images/jerryx.jpg'
-import { LocationOn } from '@mui/icons-material'
-import { Email } from '@mui/icons-material'
-import { Phone } from '@mui/icons-material'
-import { GitHub } from '@mui/icons-material'
+import JerryX from './images/jerryx.jpg';
+import { GitHub } from '@mui/icons-material';
 
-import FakeSO from '../Home/photo_gallery/fakeso.png'
-import icpc24 from '../Home/photo_gallery/icpc24.jpg'
-import jpmorgan_quant from '../Home/photo_gallery/jpmorgan_quant_research.png'
-import zaipu from '../Home/photo_gallery/zaipu_main.png'
+import FakeSO from '../Home/photo_gallery/fakeso.png';
+import zaipu from '../Home/photo_gallery/zaipu_main.png';
 
 
 import {
@@ -217,7 +211,6 @@ function SkillChip({ label }) {
         px: 1.5,
         color: 'white',
         border: '1px solid #2a2a2a',
-        px: 1,
         fontSize: '1rem',
         transition: 'all 0.25s ease',
         '&:hover': {

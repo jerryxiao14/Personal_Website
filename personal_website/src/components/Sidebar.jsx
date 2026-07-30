@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Typography,List, ListItem, ListItemIcon, ListItemButton} from '@mui/material';
+import { Box, Typography, List, ListItemIcon, ListItemButton } from '@mui/material';
 import {
   Home as HomeIcon,
   Work as WorkIcon,
